@@ -1,39 +1,35 @@
-﻿namespace adminPanel
+﻿namespace adminProje_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Kullanıcı adı : admin şifre : 123");
-            // 3 hatalı girişten sonra daha giremezsin :)
-            
-            var name = "admin";
+            //Doğru giremezsen asla bitmem 8)  
+
+
+            var ad = "admin";
             var sifre = "123";
-            for (int i = 0; i < 3; i++)
+
+
+            Console.WriteLine("Kullanıcı adını giriniz : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Şifre giriniz: ");
+            string password = Console.ReadLine();
+
+
+            while (ad != name || sifre != password)
             {
-                Console.WriteLine("Kullanıcı adını giriniz : ");
-                string ad=Console.ReadLine();
+                Console.WriteLine($"Kullanıcı adı veya şifreniz hatalıdır ");
 
-                Console.WriteLine("Şifre giriniz: ");
-                string password = Console.ReadLine();
+                Console.WriteLine("Kullanıcı adınızı tekrar giriniz : ");
+                name = Console.ReadLine();
 
-                if (ad == name && sifre == password)
-                {
-                    Console.WriteLine("Kullanıcı adı ve şifre doğrudur.\nHOŞGELDİN :)");
-                    break;
-                }
-                else 
-                {
-                    Console.WriteLine("Girmiş olduğunuz kullanıcı adı ve şifre yanlıştır.");
-                    if (i == 2)
-                    {
-                        Console.WriteLine("Deneme haklarınızı doldurdunuz .... \nLütfen bir yetkili ile iletişime geçiniz.");
-                    }
-                }
+                Console.WriteLine("Şifrenizi tekrar giriniz: ");
+                password = Console.ReadLine();
 
-            }       
-            
-
+            }
+            Console.WriteLine("Hoşgeldin :)");
         }
     }
 }
